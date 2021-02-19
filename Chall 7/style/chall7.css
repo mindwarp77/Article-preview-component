@@ -1,0 +1,175 @@
+.share-list {
+  width: 100px;
+  height: 50px;
+  background-color: #48556a;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+#main {
+  width: 100%;
+  height: 100vh;
+  background-color: #ecf2f8;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.full-article {
+  background-color: #fff;
+  font-family: Manrope, sans-serif;
+  width: 55%;
+  height: auto;
+  border-radius: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.full-article .drawers {
+  width: 80%;
+  height: 100%;
+  background-image: url("drawers.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+}
+
+.full-article .article .title {
+  font-size: 1.6vw;
+  margin: 1.25vw 0 1.25vw 0;
+  padding: 0 2.5vw;
+}
+
+.full-article .article .darkFontStyle {
+  font-weight: 700;
+  color: #48556a;
+}
+
+.full-article .article .text {
+  margin: 1.25vw 0 1.25vw 0;
+  padding: 0 2.5vw;
+  font-size: 1vw;
+}
+
+.full-article .article .lightFontStyle {
+  font-weight: 500;
+  color: #6d7f97;
+}
+
+.full-article .article .veryLightFontStyle {
+  font-weight: 500;
+  color: #9eafc2;
+}
+
+.full-article .article .author {
+  width: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 1.25vw 0 1.25vw 0;
+  padding: 0 2.5vw;
+}
+
+.full-article .article .author #avatar {
+  width: 4.5rem;
+  height: 4.5rem;
+  border-radius: 50%;
+}
+
+.full-article .article .author .author-pres {
+  width: 50%;
+  line-height: 0.5em;
+}
+
+.full-article .article .author .share {
+  margin-left: 25%;
+  background-color: #ecf2f8;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+@media screen and (max-width: 1000px) {
+  .full-article .article
+.author #avatar {
+    width: 3rem;
+    height: 3rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .full-article {
+    width: 90%;
+    height: 70%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+  .full-article .drawers {
+    width: 100%;
+    height: 40%;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    border-bottom-left-radius: 0;
+    background-position-y: 55%;
+  }
+  .full-article .article .title {
+    font-size: 3.2vw;
+    margin: 3vw 0 3vw 0;
+  }
+  .full-article .article .text {
+    font-size: 2.5vw;
+    margin: 3vw 0 3vw 0;
+  }
+}
+
+/*AJUSTEMENTS RESPONSIVE?VOIR PROBLEME?
+AJOUT BARRE FLOTTANTE + JAVASCRIPT*/
+/*# sourceMappingURL=chall7.css.map */
