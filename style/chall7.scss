@@ -1,0 +1,217 @@
+$fontStack: Manrope, sans-serif;
+$fontWeight500: 500;
+$fontWeight700: 700;
+$fontSize: 13px;
+$veryDarkGrayBlue: hsl(217, 19%, 35%);
+$desatDarkBlue: hsl(214, 17%, 51%);
+$grayBlue: hsl(212, 23%, 69%);
+$lightGrayBlue: hsl(210, 46%, 95%);
+$white: #fff;
+* {
+    margin: 0;
+    padding-left: 0;
+    font-size: $fontSize;
+    font-family: $fontStack;
+}
+.darkFontStyle {
+    color: $veryDarkGrayBlue;
+    font-weight: $fontWeight700;
+}
+.lightFontStyle {
+    color: $desatDarkBlue;
+}
+.veryLightFontStyle { 
+    color: $grayBlue;
+}
+@mixin marginPadding { 
+    padding: 0 6%;
+    margin: 1em 0;   
+}
+@mixin respMarginPadding {
+    padding: 0 5%;
+    margin: 0.8em 0;  
+}
+.main {
+    background-color: $lightGrayBlue;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .full-article {
+        background-color: $white;
+        width: 50%;
+        height: auto;
+        display: flex;
+        border-radius: 15px;
+    }
+    .drawers {
+        width: 32.5%;
+        background-image: url(drawers.jpg);
+        background-size: 120%;
+        background-repeat: no-repeat;
+        background-size: cover;
+        border-top-left-radius: 15px;
+        border-bottom-left-radius: 15px;
+    }
+    .article {
+        width: 67.5%;
+        .title, .text {
+            @include marginPadding()
+        }
+        .title {
+            font-size: 1.8rem;
+        }
+        .text {
+            font-size: 1.2rem;
+        }
+        .author { 
+            @include marginPadding();
+            display: flex;
+            justify-content: space-between;
+            .author-thumb {
+                display: flex;
+                align-items: center;
+                .avatar {
+                    width: 60px;
+                    height: 60px;
+                    border-radius: 50%;
+                }
+                .presentation {
+                    margin: 1em 1.5em;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                }
+                .michelle, .date {
+                    font-size: 1.2rem;
+                }
+            }
+            .share {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                #share-thumb {
+                    background-color: $veryDarkGrayBlue;
+                    width: 200px;
+                    height: 50px;
+                    display: flex;
+                    justify-content: space-evenly;
+                    align-items: center;
+                    border-radius: 5px;
+                    position: relative;
+                    top: -40px;
+                    left: 25%;
+                    opacity: 0;
+                    transition: opacity 0.5s ease-in-out;
+                    margin-right: auto;
+                    &.active-thumb {
+                        opacity:1;
+                    }
+                    & span {
+                        color:$desatDarkBlue;
+                        text-transform: uppercase;
+                        letter-spacing: 0.15em;
+                        font-weight: $fontWeight700;
+                    }
+                }
+                .bouton {
+                    position: relative;
+                    background-color: $lightGrayBlue;
+                    width: 40px;
+                    height: 40px;
+                    border-radius: 50%;
+                    bottom: 1.5em;
+                    left: 25%;
+                    background-image: url(icon-share.svg);
+                    background-repeat: no-repeat;
+                    background-position-x: center;
+                    background-position-y: center;
+                    border: 0;
+                    transition: background-color 0.5s ease-in;
+                    outline-style:none;
+                    cursor: pointer;
+                    &.active-button {
+                        background-color: $desatDarkBlue;
+                        background-image: url(icon-share-open.svg);
+                    }
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width:1024px){
+    .main {
+        .full-article {
+            width: 75%;
+        }
+    }
+}
+@media screen and (max-width:768px){
+    .main {
+        .full-article {
+            width: 80%;
+            height: 80%;
+            flex-direction: column;
+        }
+        .drawers {
+            width: 100%;
+            height: 40%;
+            background-position-y: 40%;
+            border-top-left-radius: 15px;
+            border-bottom-left-radius: 0;
+            border-top-right-radius: 15px;
+        }
+        .article {
+            width: 100%;
+            height: auto;
+            .title, .text {
+                @include respMarginPadding()
+            }
+            .title {
+                font-size: 2rem;
+            }
+            .text {
+                font-size: 1.2rem;
+            }
+            .author{
+                .share{
+                    width: 40%;
+                    #share-thumb {
+                        left: 30%;
+                    }
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width:440px){
+    .main {
+        .article {
+            .title {
+                font-size: 1.4rem;
+            }
+            .text {
+                font-size: 1.2rem;
+            }
+            .author{
+                .author-thumb {
+                    .avatar {
+                        width: 45px;
+                        height: 45px;
+                    }
+                    .michelle, .date {
+                        font-size: 0.8rem;
+                    }
+                }    
+                .share{
+                    width: 40%;
+                    #share-thumb {
+                        left:-75%;
+                    }
+                }
+            }
+        }
+    }
+}
